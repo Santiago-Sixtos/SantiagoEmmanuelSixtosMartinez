@@ -12,4 +12,7 @@ Las partes que componen cada caja y su orden de visualización desde el punto de
   
   
 ## <center> PROPIEDAD DISPLAY
-La propiedad CSS display especifica si un elemento es tratado como `block` o **inline** y el diseño usado por sus hijos, como flow layout, grid (cuadricula) o felx (felxible).
+La propiedad CSS display especifica si un elemento es tratado como `block` o `inline` y el diseño usado por sus hijos, como flow layout, grid (cuadricula) o flex (felxible).  
+
+Los valores basicos de la propiedad display son el valor `inline` y el valor `block`.  
+Entonces el elemento HTML `<span>`, por defecto, utiliza el valor de `<inline>` mientras que el elemento HTML `<div>`, por defecto, utiliza el valor block.
