@@ -43,4 +43,15 @@ El estilo con las propiedaes:
 La propiedad CSS display especifica si un elemento es tratado como `block` o `inline` y el diseño usado por sus hijos, como flow layout, grid (cuadricula) o flex (felxible).  
 
 Los valores basicos de la propiedad display son el valor `inline` y el valor `block`.  
-Entonces el elemento HTML `<span>`, por defecto, utiliza el valor de `<inline>` mientras que el elemento HTML `<div>`, por defecto, utiliza el valor block.
+Entonces el elemento HTML `<span>`, por defecto, utiliza el valor de `<inline>` mientras que el elemento HTML `<div>`, por defecto, utiliza el valor block.  
+
+### Display inline
+Los elementos de linea tienene su altura y anchura determinados por su contenido. Si hay varios elementos en linea estaran colocados de izquierda a derecha.  
+Ejemplo: el elemento HTML `<span>` elemento de linea por defecto y no importa cuantas etiquetas `<span>`haya siempre apareceran en linea.  
+![Alt text](image-4.png)
+
+Lista de elementos en linea:
+`b`, `big`, `i`, `small`, `tt`,
+`abbr`, `acronym`, `cite`, `code`, `dfn`, `em`, `kbd`, `strong`, `samp`, `time`, `var`,
+`a`, `bdo`, `br`, `img`, `map`, `object`, `q`, `script`, `span`, `sub`, `sup`,
+`button`, `input`, `label`, `select`, `textarea`
