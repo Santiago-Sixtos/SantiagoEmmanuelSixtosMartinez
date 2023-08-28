@@ -12,4 +12,4 @@ Las partes que componen cada caja y su orden de visualización desde el punto de
   
   
 ## <center> PROPIEDAD DISPLAY
-La propiedad CSS display especifica si un elemento es tratado como **block** o **inline** y el diseño usado por sus hijos, como flow layout, grid (cuadricula) o felx (felxible).
+La propiedad CSS display especifica si un elemento es tratado como `block` o **inline** y el diseño usado por sus hijos, como flow layout, grid (cuadricula) o felx (felxible).
