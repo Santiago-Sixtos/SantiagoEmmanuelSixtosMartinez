@@ -10,7 +10,35 @@ Las partes que componen cada caja y su orden de visualización desde el punto de
 - **Color de fondo:** Color que se muestra por detras del contenido y el espacio del relleno.
 - **Margen:** Separacion opcional existente entre la caja y el resto de cajas adyacentes.  
   
-  
+### Altura y anchura
+Las propiedades CSS que controlan la altura de las hojas y tambien anchura se denomina **width** y **height**. La propiedad **width** no admite valores negativos y los valores en porcentaje se calculan a partir de la anchura de su elemento padre.   
+![Alt text](image.png)![Alt text](image-1.png)
+
+### Margen y relleno
+CSS define cuatro propiedades para controlar cada uno de los márgenes horizontales y verticales de un elemento(**margin-top, margin-right, margin-bottom, margin-left**).  
+Cada una de las propiedades establece la separación entre el borde lateral de la caja y el resto de cajas adyacentes, las unidades más utilizadas para indicar los márgenes de un elemento son los píxeles, los em y los porcentajes.  
+![Alt text](image-2.png)![Alt text](image-3.png)  
+### Bordes
+CSS puede modificar el aspecto de cada uno de los cuatro bordes. Cada borde puede establecer anchura o grosor, color y estilo.
+
+La anchura de los bordes se controla con las cuatro propiedades:  
+- `border-top-with`
+- `border-right-widht`
+- `border-bottom-widht`
+- `border-left-width`
+
+El color con las propiedades:
+- `border-top-color`
+- `border-right-color`
+- `border-bottom-color`
+- `border-left-color`
+
+El estilo con las propiedaes:
+- `border-top-style`
+- `border-right-style`
+- `border-bottom-style`
+- `border-left-style`
+
 ## <center> PROPIEDAD DISPLAY
 La propiedad CSS display especifica si un elemento es tratado como `block` o `inline` y el diseño usado por sus hijos, como flow layout, grid (cuadricula) o flex (felxible).  
 
