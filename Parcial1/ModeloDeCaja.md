@@ -54,4 +54,22 @@ Lista de elementos en linea:
 `b`, `big`, `i`, `small`, `tt`,
 `abbr`, `acronym`, `cite`, `code`, `dfn`, `em`, `kbd`, `strong`, `samp`, `time`, `var`,
 `a`, `bdo`, `br`, `img`, `map`, `object`, `q`, `script`, `span`, `sub`, `sup`,
-`button`, `input`, `label`, `select`, `textarea`
+`button`, `input`, `label`, `select`, `textarea`.
+
+### Display block
+Es un elemento de bloque que ocupa el ancho maximo disponible, no quiere decri que abarque todo el 100% del espacio si no que se estira por todo el ancho de la pagina.  
+![Alt text](image-5.png)
+
+Lista de elementos de bloque:  
+`<address>`, `<article>`, `<aside>`, `<audio>`, `<blockquote>`, `<canvas>`, `<dd>`, `<div>`, `<dl>`, `<fieldset>`, `<figcaption>`, `<figure>`, `<footer>`, `<form>`, `<header>`, `<hgroup>`, `<hr>`, `<li>`, `<main>`, `<nav>`, `<noscript>`, `<ol>,` `<output>`, `<p>`, `<pre>`, `<section>`, `<table>`, `<tfoot>`, `<ul>`, `<video>`, `<h1>...<h6>`.  
+
+### Display inline - block
+Es una combinacion entre los dos tipos de elementos mencionados, los elementos con el valor `inline-block` admiten dimensiones pero todavia son elementos de linea.  
+Un dato curiosso es que el elemento HTML `<img>` es elemnto **inline** pero la imagen puede contener otro elemento de blooque por lo que en realidad una imagen es un elemento en line y bloque al mismo tiempo osea **inline-block**.  
+
+### Display none
+Lo que hace el valor **none** de la propiedad display es que oculta un elemento, por lo que no ocupara ningún espacio. El elemento estará oculto y la pagina será desplegada como si el elemento no estuviera allí.  
+Hay que tener cuidado con este valor, porque sabemos que si oculta el elemento pero se sigue renderizando.
+
+### Display flex y display grid
+De manera general podemos decir que el valor **flex** se usa para maquetar componentes como por ejemplo, un menú de navegación y **grid** se usa para maquetar el layout.
