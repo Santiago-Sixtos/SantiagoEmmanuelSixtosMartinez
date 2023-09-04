@@ -1,0 +1,53 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    margin: auto;
+    max-width: 1250px;
+    background-color: white;
+}
+
+h1{
+    text-align: center;
+    color: red;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.Ejemplo{
+    color: brown;
+}
+
+.Subtitulo{
+    color: green;
+}
+
+.Tabla{
+    text-align: center;
+}
+
+/* Selector de descendencia */
+div li{
+    background-color: aqua;
+}
+
+/* Selector de hijo (Descendiente directo) */
+ul > li{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-decoration: line-through;
+    font-style: italic;
+}
+
+.Listas>li{
+    text-decoration: underline;
+    font-size: x-large;
+}
+
+/* Selector hermano adyacente */
+.Listas+*{
+    color: crimson;
+    font-size: 40px;
+}
+

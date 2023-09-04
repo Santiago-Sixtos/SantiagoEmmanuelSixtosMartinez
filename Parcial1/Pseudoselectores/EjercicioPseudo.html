@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseucelectores</title>
+    <link rel="stylesheet" href="Estilos.css">
+</head>
+<body>
+    <h1 id="H01" class="Titulo">Pseoducelectores</h1>
+    <h2 id="S01" class="Subtitulo">Pseudoclases</h2>
+
+    <p id="P01" class="Parrafo">La pseudoclase es el selector que marca elementos que estan en un estado
+        especofico, ejemplo de esto, los que osn el primer elemtno de su tipo, o aquellos por los que
+        el cursor les pasa por encima. Tienden a actuar como si hubieras aplicado una clase en una parte
+        determinada del documento y, a menudo, ayudan a reducir el esceso de clases y proporcionan un
+        marcado mas flexible y facil de mantener <br> las pseudoclaes son palabras clave que comienzan
+        con dos puntos ":".
+    </p>
+    <p id="P02" class="Parrafo">Ejemplo</p>
+
+    <hr> <!--  Sirve para el salto de linea  -->
+
+    <p id="P03" class="Ejemplo">:pseudoclase-nombre</p>
+
+    <hr>
+
+    <h2 id="S02" class="Subtitulo">Pseudelemento</h2>
+
+    <p id="P04" class="Parrafo">Los pseudoelementos se comportan de manera similar, sin embargo, estas 
+        actuan como si hubieran añadido un elemento HTML totalmente nuevo en el marcado, en lugar de 
+        haber aplicado una clase nueva a los elementos presentes. Los pseudoelementos empiezan con un doble
+        sigo de puntos "::".
+    </p>
+    <p id="P05" class="Parrafo">Ejemplo:</p>
+
+    <hr>
+
+    <p id="P06" class="Ejemplo">::pseudoelemento-nombre</p>
+
+    <hr>
+
+    <div>
+        <ol id="L01" class="Lista"> <!--  <ol> - Sirve para desplazar y empezar a listar  -->
+            <li>Descendientes</li> <!--  <li> - Enumera el punto de la lista -->
+            <ol id="L02" class="Lista">
+                <li>Descendiente directo</li>
+                <li>Hermano adyacente</li>
+            </ol>
+            <li>Hermano general</li>
+        </ol>
+    </div>
+
+    <li>Fuera de un div</li>
+
+    <hr>
+
+    <h3 id="S03" class="Subtitulo">Selector Descendiente</h3>
+    <p id="P07" class="Parrafo">El descendiente le da estilos a uno o mas elementos que se encuentran dentro
+        de otros elementos, sin importar la profundidad.
+    </p>  
+
+    <h3 id="S04" class="Subtitulo">Selector de hijo o descendiente directo</h3>
+    <p id="P08" class="Parrafo">Este selector es similar al selector descendiente, solo que este da estilos a 
+        un elemento que es hijo de otro elemento. EN el selector de hijo de elemento tiene que ser hijo directo
+        del elemento y no va mas profundo, se indica con el signo de "mayor que".
+    </p>
+
+    <h3 id="S05" class="Subtitulo">Selector adyacente de hermano o hermano adyacente</h3>
+    <p id="P09" class="Parrafo">El selector adyacente de estilos al elemento que sea hermano de otro elemento, es 
+        decir, que los dos tengan el mismo padre y se indica con el signo +.
+    </p>
+
+    <h3 id="S06" class="Subtitulo">Selector general de hermanos o hermano general</h3>
+    <p id="P10" class="Parrafo">El selector general de hermanos es totalmente igual adyacente, solo que este 
+        si toma en cuenta a todos los hermanos de hijo1 y se indica con el signo ~.
+    </p>
+
+    <h3 id="S07" class="Subtitulo">Pseudo-Clases</h3>
+
+    <ul id="L03" class="Listas">
+        <li>div p :descendencia: selecciona < p > si esta dentro de un < div > </li>
+        <li>div > p: descendencia directa: selecciona < p > solo si es hijo directo de < div ></li>
+        <ol>
+            <li>div + p:Hermano adyacente: selecciona < p > si esta "enseguida" del < div ></li>
+            <li>div ~ p: Hermano general: selecciona < p > si esta "despues" del < div ></li>
+        </ol>
+        <li>Una coma en un selector solo es un separador</li>
+    </ul>
+
+    <h3 id="S08" class="Subtitulo">Pseudo-Elementos</h3>
+    <table id="T01" class="Tabla" border="4"> <!--  Para crear la tabla -->
+        <tr> <!--  <li> - Linea de la tabla -->
+            <td>Pseudo-Clase</td> <!--  La informacion de la celda  -->
+            <td>Descripcion</td>
+        </tr>
+        <tr>
+            <td>::first-line</td>
+            <td>Primera linea de texto de un elemento</td>
+        </tr>
+        <tr>
+            <td>::first-letter</td>
+            <td>Primera letra de la primera linea de texto de un elemento</td>
+        </tr>
+        <tr>
+            <td>::before</td>
+            <td>Añade contenido al princio del documento</td>
+        </tr>
+        <tr>
+            <td>::after</td>
+            <td>Añade contenido al final del documento</td>
+        </tr>
+    </table>
+</body>
+</html>
