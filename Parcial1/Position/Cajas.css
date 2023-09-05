@@ -1,0 +1,33 @@
+.Caja{
+    background-color: aqua;
+    color: red;
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+    text-align: center;
+}
+
+#C01{
+    position: static;
+}
+
+#C02{
+    position: relative;
+    left: 200px;
+}
+
+#C03{
+    position: absolute;
+    left: 150px;
+}
+
+#C04{
+    position: fixed;
+    top: 50px;
+    left: 250px;
+}
+
+#C05{
+    position: sticky;
+    right: 50px;
+}
