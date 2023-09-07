@@ -26,10 +26,12 @@ body{
 
 #Header{
     display: flex;
+    justify-content: center;/* Para centrar en layout  */
     width: 100%;
     height: 50px;
     background-color: aqua;
     color: blue;
+    
 }
 
 #Sidebar{
