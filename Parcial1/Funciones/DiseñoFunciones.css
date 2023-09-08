@@ -1,0 +1,14 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.Caja{
+    width: calc((100%/3)-20px);
+    height: 100%;
+    background-color: aqua;
+    border: 1px solid blue;
+    float: left;
+    margin: 10px;
+}
