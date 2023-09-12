@@ -1,0 +1,51 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+} 
+
+.Contenedor {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    /* background-color:#540455; */
+    grid-template-columns: 25%, 50%, 25%;
+    grid-template-rows: 25%, 50%, 25%;
+    grid-template-areas:
+        'C1 C2 C3'
+        'C1 C4 C5';
+    align-items: stretch;
+    justify-items: stretch;
+}
+
+#C01 {
+    grid-area: C1;
+    background-color: red;
+}
+
+#C02 {
+    grid-area: C2;
+    background-color: yellow;
+} 
+
+#C03 {
+    grid-area: C3;
+    background-color: green;
+}
+
+#C04 {
+    grid-area: C4;
+    background-color: blue;
+} 
+
+#C05 {
+    grid-area: C5;
+    background-color: orange;
+}
+
+#C01 {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    align-self: start;
+    height: 100%;
+}
