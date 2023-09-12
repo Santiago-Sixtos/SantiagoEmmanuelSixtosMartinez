@@ -1,0 +1,49 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+}
+
+.Cont{
+    background-color: aqua;
+    border: 2px solid blue;
+    color: blue;
+    float: left;
+    height: 100%;
+    position: absolute;
+}
+
+.Encabezado{
+    border: 2px solid blue;
+    background-color: aqua;
+    height: 2%;
+}
+
+#Header{
+    display: flex;
+    justify-content: center; /* Para centrar en layout  */
+    width: 100%;
+    height: 50px;
+    background-color: aqua;
+    color: blue;
+    
+}
+
+#Sidebar{
+    width: 30%;
+}
+
+#Content{
+    left: 30%;
+    width: 70%;
+}
+
+.SubMenu{
+    list-style-type: none;
+}
+
