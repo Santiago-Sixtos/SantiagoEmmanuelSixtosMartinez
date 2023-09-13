@@ -6,9 +6,22 @@
 
 .Caja{
     width: calc((100% / 3)-20px);
-    height: 100%;
+    height: 100px;
+    width: 100px;
     background-color: aqua;
     border: 1px solid blue;
     float: left;
-    margin: 10px;
+    margin: 100px;
+}
+
+#C01:hover{
+    transform: rotate(50deg);
+}
+
+#C02:hover{
+    transform: translate(100px);
+}
+
+#C03:hover{
+    transform: scale(4, 3);
 }
