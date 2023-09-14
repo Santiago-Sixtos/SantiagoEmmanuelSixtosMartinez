@@ -1,0 +1,34 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.Caja{
+    width: calc((100% / 3) - 20px);
+    height: 100px;
+    width: 100px;
+    background-color: aqua;
+    border: 1px solid blue;
+    float: left;
+    margin: 10px;
+}
+
+/* Estilos aplicables a pantallas ABAJO de 800px */
+@media screen and (min-width: 400px) and (max-width: 900px) {
+    #C01, #C02{
+        width: calc(100% / 2) - 20px;
+    }
+    #C03{
+        clear: left;
+        width: calc(100% - 20px);
+    }
+}
+@media screen and (max-width: 399px) {
+    #C01,
+    #C02,
+    #C03{
+        clear: left;
+        width: calc(100% - 20px);
+    }
+}
