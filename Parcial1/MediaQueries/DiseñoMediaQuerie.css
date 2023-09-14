@@ -17,7 +17,7 @@
 /* Estilos aplicables a pantallas ABAJO de 800px */
 @media screen and (min-width: 400px) and (max-width: 900px) {
     #C01, #C02{
-        width: calc(100% / 2) - 20px;
+        width: calc((100% / 2) - 20px);
     }
     #C03{
         clear: left;
