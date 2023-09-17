@@ -13,7 +13,7 @@ body{
     background-color: aqua;
     border: 2px solid blue;
     color: blue;
-    float: left;
+    /* float: left; */
     height: 100%;
     position: absolute;
 }
@@ -22,20 +22,21 @@ body{
     border: 2px solid blue;
     background-color: aqua;
     height: 2%;
+    text-align: center;
 }
 
 #Header{
+    position: static;
     display: flex;
     justify-content: center; /* Para centrar en layout  */
-    width: 100%;
-    height: 50px;
+    height: 100px;
     background-color: aqua;
     color: blue;
-    
+    overflow: hidden;
 }
 
 #Sidebar{
-    width: 30%;
+    width: 20%;
 }
 
 #Content{
@@ -43,7 +44,14 @@ body{
     width: 70%;
 }
 
-.SubMenu{
-    list-style-type: none;
+input#togle{
+    display: none;
 }
 
+input:checked + div#Sidebar{
+    display:none;
+}
+
+/* input:checked ~ div#Sidebar{
+    width:100%;
+} */
