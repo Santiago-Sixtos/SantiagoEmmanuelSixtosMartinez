@@ -45,9 +45,11 @@ body{
 
 .opcion:hover .SubMenu{
     display: block;
+    color: black;
 }
 
 .SubMenu{
     display: none;
+    background-color: yellowgreen;
 }
 
