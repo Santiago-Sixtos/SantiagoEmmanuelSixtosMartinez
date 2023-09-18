@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrabajoVariables</title>
+    <style>
+
+        :root{
+            --color-primario: gray;
+            --color-secundario: green;
+        }
+
+        input:checked + div#contenedor{
+            background-color: var(--color-secundario);
+        }
+
+        div#contenedor{
+            background-color: var(--color-primario);
+        }
+
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .Parrafo{
+            color:black;
+            line-height: 1.5em;
+        }
+        
+        #P01{
+            font-size: 20px;
+        }
+
+        #img01{
+            width: 500px;
+        }
+
+        h1{
+            margin-top: 0;
+            color: brown;
+        }
+    </style>
+</head>
+<body>
+    <label for="tema">Tema</label>
+    <input id="tema" type="checkbox">
+
+    <div id="contenedor">
+    <h1 id="T01" class="Titulo">DEPRESION EN DARK SOULS</h1>
+
+    <p id="P01" class="Parrafo">Depresion....</p>
+    <p id="P02" class="Parrafo">Es una palabra muy parecida a prision, un lugar donde no podemos hacer nada;
+        salvo morir poco a poco...
+    </p>
+    <p id="P03" class="Parrafo">Si empezamos dark souls, no muertos, huecos... portando esa maldita marca oscura
+        todo a nuestro alrededor es deprimente, no merece la pena hacer nada, ni luchar por nada, entonces el
+        juego arroja a nuestros pies la posibilidad de salir de ahi, ni siquiera nos la pone en la mano, somos 
+        nosotros mismos los que decidimos levantarnos y recoger esa llave para salir de ahi, es cuando entonces 
+        empiezas a perder una y otra vez. 
+    </p>
+    <p id="P04" class="Parrafo">Por que... por mas que luchas acabas perdiendo partes de ti, cada pensamiento 
+        negativo se refuerza cuando vez ese maldito mensaje en pantalla y te repites que eres inutil y todo
+        cuanto haces es en vano.
+        <img id= "img01" src="img/Mensaje de DarkSouls.jpg" alt="Mensaje de dark souls">
+    </p>
+    <p id="P05" class="Parrafo">Pero entonces GANAS! de todos esos pensamientos negativos empieza a florar un "puedo conseguirlo", es 
+        un viaje que nos lleva por los lugares mas oscuros y profundos por que solo asi podremos ver que tan lejos
+        y alto hemos llegado, es normal tener miedo, te enfrentas a los mayores desafios, descubres que no estas
+        solo que todo este camino siempre puedes recorrerlo con ayuda, por que la dificultas se conviertio en 
+        en nuestra mejor maestra. Que el no muerto elegido podria ser cualquiera por que cualquier persona puede
+        tener depresion, igual manera que cualquiera puede superarla.
+    </p>
+    <p id="P05" class="Parrafo">Dark souls no es la cura; pero nos enseña a ser pacientes con nosotros mismos,
+        a pedir ayuda, a perdonarnos esos errores, se que cualquier persona que lea esta pagina pueden estar
+        pasando por una depresion o algo peor... pero esta pagina puede ser esa hoguera en la que puedes descansar 
+        de toda esa tormenta, en sus peores dias esa marca de invocacion para recordarles que siempre habra alguien
+        para que los escuche, que siempre podemos alabar al sol juntos aunque esten cansados, agotados a punto de 
+        rendirse en su peor momento siempre atravesaremos esa niebla por densa que sea, sin importar que espera
+        al otro lado o como se llama ese boss: "ansiedad", "depresion", "soledad", "perdida", "sufrimiento".  
+    </p>
+    <p id="P06" class="Parrafo">Claro que vamos a perder todas esas batallas una y otra vez, pero nos levantaremos
+        e invocaremos a quien haga falta y haremos lo que sea por saber que es lo que se siente al ganar, por que 
+        esto que sinetes ahora, esa llama, todo eso es Dark Souls... 
+    </p>
+    </div>
+</body>
+</html>
