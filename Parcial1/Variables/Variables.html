@@ -11,6 +11,10 @@
             --color-secundario: green;
         }
 
+        /* Selector padre (Para pintar toda la pagina) */
+        body:has(input:checked){ 
+            background-color: var(--color-secundario);
+        }
         input:checked + div#contenedor{
             background-color: var(--color-secundario);
         }
