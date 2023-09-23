@@ -1,0 +1,73 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    margin: auto;
+    max-width: 1250px;
+    background-color: white;
+}
+
+h1{
+    text-align: center;
+    color: red;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.Ejemplo{
+    color: brown;
+}
+
+.Subtitulo{
+    color: green;
+}
+
+.Tabla{
+    text-align: center;
+}
+
+tr:nth-child(odd) {
+    background-color: cyan;
+}
+
+td:hover{
+    background-color: rgb(87, 87, 202);
+    color: azure;
+}
+
+td:active{
+    background-color: brown;
+}
+
+table, tr, th, td{
+    border: 1px solid blue;
+    border-collapse: collapse;
+}
+
+table{
+    border-collapse: separate;
+    border-spacing: 5px;
+    background: #ebdfdf url("gradient.gif") bottom left repeat-x;
+    color: #000000;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+@media screen and (max-width:600px) {
+    table, tr, th, td{
+        display: block;
+    }
+
+    td {
+        padding-left: 50%;
+    }
+
+    td:nth-child(1)::before{content: "Hora"; position: absolute; left: 10px;}
+    td:nth-child(2)::before{content: "Lunes"; position: absolute; left: 10px;}
+    td:nth-child(3)::before{content: "Martes"; position: absolute; left: 10px;}
+    td:nth-child(4)::before{content: "Miercoles"; position: absolute; left: 10px;}
+    td:nth-child(5)::before{content: "Jueves"; position: absolute; left: 10px;}
+    td:nth-child(6)::before{content: "Viernes"; position: absolute; left: 10px;}
+}

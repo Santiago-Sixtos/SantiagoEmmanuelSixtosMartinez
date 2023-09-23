@@ -1,0 +1,29 @@
+/* Selector padre (Para pintar toda la pagina) */
+body:has(input:checked) {
+  background-color: var(--color-secundario);
+}
+input:checked + div#contenedor {
+  background-color: var(--color-secundario);
+}
+div#contenedor {
+  background-color: var(--color-primario);
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  max-width: 500px;
+  margin: 0 auto;
+}
+.Parrafo {
+  color: black;
+  line-height: 1.5em;
+}
+#P01 {
+  font-size: 20px;
+}
+#img01 {
+  width: 500px;
+}
+h1 {
+  margin-top: 0;
+  color: brown;
+}
