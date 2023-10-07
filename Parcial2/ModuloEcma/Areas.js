@@ -1,9 +1,9 @@
-export function areaCuadrado(lado){
-    return lado*lado;
+export function areaRectangulo(largo, ancho){
+    return largo*ancho;
 }
 
-export function areaTriangulo(base,altura){
-    return (base*altura)/2;
+export function areaCirculo(radio){
+    return 3.1416*radio^2;
 }
 
 // module.exports.areaCuadrado=areaCuadrado;
