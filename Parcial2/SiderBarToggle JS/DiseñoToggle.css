@@ -1,0 +1,58 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+}
+
+.Cont{
+    background-color: aqua;
+    border: 2px solid blue;
+    color: blue;
+    /* float: left; */
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+.Encabezado{
+    border: 2px solid blue;
+    background-color: aqua;
+    height: 2%;
+    text-align: center;
+}
+
+#Header{
+    position: static;
+    display: flex;
+    justify-content: center; /* Para centrar en layout  */
+    height: 100px;
+    background-color: aqua;
+    color: blue;
+    overflow: hidden;
+}
+
+#Sidebar{
+    float: left;
+    height: 100%;
+    width: 20%;
+}
+
+#Content{
+    left: 20%;
+    width: 80%;
+    overflow-y: scroll;
+    clear: left ;
+}
+
+.SidebarEscondido{
+    display: none;
+}
+.ContenidoAlCien{
+    left: 0 !important;
+    width: 100% !important;
+}

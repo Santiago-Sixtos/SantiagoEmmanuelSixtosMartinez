@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+    <link rel="stylesheet" href="EstilosGrid.css">
+</head>
+<body>
+    <div id="Cont" class="Contenedor">
+        <div id="C01" class="Caja"></div>
+        <div id="C02" class="Caja"></div>
+        <div id="C03" class="Caja"></div>
+        <div id="C04" class="Caja"></div>
+        <div id="C05" class="Caja"></div>
+        <div id="C06" class="Caja"></div>
+        <div id="C07" class="Caja"></div>
+        <div id="C08" class="Caja"></div>
+        <div id="C09" class="Caja"></div>
+        <div id="C10"></div>
+        <div id="C11"><button id="LG" type="button">Limpiar gato</button></div>
+        <div id="C12"></div>
+    </div>
+        
+    <script>
+        var Xo = "X";
+        document.getElementById("Cont").addEventListener("click", function(e){
+            console.log(e.target.id)
+
+            if (document.getElementById(e.target.id).innerText=" ") {
+                if (Xo == "X") {
+                Xo = "O"
+                }
+                else{
+                Xo = "X"
+                }
+            }
+            
+            document.getElementById(e.target.id).innerText="X";
+        })
+
+        document.getElementById("LG").addEventListener("click", function(){
+            let cajas = document.getElementsByClassName("caja");
+            for(const elemento of cajas){
+                console.log(elemento)
+                elemento.innerText=" "
+            }
+        })
+    </script>
+</body>
+</html>

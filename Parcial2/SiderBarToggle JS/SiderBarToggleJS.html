@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SideBarToggleJS</title>
+    <link rel="stylesheet" href="DiseñoToggle.css">
+</head>
+<body>
+    <div id="Header" class="Encabezado">Header</div>
+    
+    <!-- <input id="togle" type="checkbox"> -->
+    <div id="Sidebar" class="Cont">Sidebar</div>
+    
+    <div id="Content" class="Cont">
+        <button id="btn" type="button">ToggleMenu</button>
+        <!-- <label for="togle">Menu</label> -->
+        <center>Content</center>
+    </div>
+
+    <script>
+        document.getElementById("btn").addEventListener("click",function(){
+            console.log("Click en el boton")
+            document.getElementById("Sidebar").classList.toggle("SidebarEscondido")
+            document.getElementById("Content").classList.toggle("ContenidoAlCien")
+        })
+    </script>
+</body>
+</html>
