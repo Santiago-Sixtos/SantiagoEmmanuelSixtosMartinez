@@ -51,14 +51,17 @@
         $('document').ready(function(){
             var xo="X";
             $("#Cont").click(function(e){
-                console.log("click");
-                console.log(e);
-                console.log(e.target.id);
                 if ( $(e.target).text() ==""){
                 if (xo == "X") {xo = "O"} else {xo = "X"}
                 $(e.target).text(xo);
                 }
-            })
+            });
+
+            $("#LG").click(function(){
+                $(".Caja").each(function(){
+                    console.log(this);
+                });
+            });
         })
     </script>
 </body>
