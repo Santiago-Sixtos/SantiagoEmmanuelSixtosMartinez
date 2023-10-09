@@ -1,0 +1,33 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.Contenedor{
+    height: 100vh;
+    width: 100vw;
+    background-color: mediumaquamarine;
+    justify-content: center;
+    align-items: stretch;
+    display: grid;
+    grid-template-columns: 25% 25% 25%;
+    grid-template-rows: 25% 25% 25%;
+    justify-items: stretch;
+}
+
+.Caja{
+    background-color: aqua;
+    border: 1px solid blue;
+    text-align: center;
+    line-height: 3cm;
+}
+
+#C11{
+    text-align: center;
+}
+
+
+
+
+
