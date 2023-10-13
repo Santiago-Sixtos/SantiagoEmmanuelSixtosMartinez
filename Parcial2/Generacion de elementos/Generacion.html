@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generacion</title>
+</head>
+<body>
+    <div id="Contenedor"></div>
+    <script>
+        let Encabezado = ['Nombre', 'Apellido','ApellidoM'];
+        let Datos = [{
+            Nombre: "Santiago",
+            Apellido: "Sixtos",
+            ApellidoM: "Martinez",
+        },{
+            Nombre: "Camila",
+            Apellido: "Sixtos",
+            ApellidoM: "Martinez",
+        },{
+            Nombre: "Ximena",
+            Apellido: "Sixtos",
+            ApellidoM: "Martinez",
+        }];
+
+        let tab=document.createElement("Tabla");
+        let enc=document.createElement("Thead");
+        let fil=document.createElement("tr");
+
+        Encabezado.forEach(elemento=>{
+            let th=document.createElement("th");
+            th.innerText=elemento;
+            fil.appendChild(th);
+        });
+
+        enc.appendChild(fil);
+        tab.appendChild(enc);
+
+        document.getElementById("Contenedor").appendChild(tab);
+
+        tbody = document.createElement("tbody");
+
+        Datos.forEach(function(elemento){
+            let fila = document.createElement("tr");
+
+            let td1 = document.createElement("td");
+            td1.innerText = elemento.Nombre;
+            fila.appendChild(td1);
+
+            let td2 = document.createElement("td");
+            td2.innerText = elemento.Apellido;
+            fila.appendChild(td2);
+
+            let td3 = document.createElement("td");
+            td3.innerText = elemento.ApellidoM;
+            fila.appendChild(td3);
+
+            tbody.appendChild(fila);
+        })
+        tab.appendChild(tbody);
+
+        document.getElementById("Contenedor").appendChild(tab);
+    </script>
+</body>
+</html>
