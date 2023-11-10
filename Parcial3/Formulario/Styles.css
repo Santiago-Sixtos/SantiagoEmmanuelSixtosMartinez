@@ -48,13 +48,6 @@ body{
     color: white;
 }
 
-#Cuenta{
-    text-decoration: none;
-}
-#Cuenta:hover{
-    text-decoration: underline;
-}
-
 .Boton{
     width: 100%;
     border: none;
