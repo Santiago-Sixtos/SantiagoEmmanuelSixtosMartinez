@@ -1,0 +1,65 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url(FondoFormulario.jpg);
+}
+
+.Registro{
+    width: 400px;
+    padding: 30px;
+    background: #232f3a;
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 4px;
+    box-shadow: 7px 13px 37px #232f3a;
+}
+
+.Registro h4{
+    font-size: 22px;
+    text-align: center;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.Casillas{
+    width: 100%;
+    padding: 10px;
+    background: #232f3a;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    border: 1px solid white;
+    font-size: 18px;
+    color: white;
+}
+
+.Registro p{
+    height: 40px;
+    color: white;
+    text-align: center;
+    font-size: 18px;
+    line-height: 40px;
+} 
+
+.Registro a{
+    color: white;
+}
+
+#Cuenta{
+    text-decoration: none;
+}
+#Cuenta:hover{
+    text-decoration: underline;
+}
+
+.Boton{
+    width: 100%;
+    border: none;
+    background-color: #90ade5;
+    padding: 12px;
+    margin: 16px 0;
+    font-size: 16px;
+}
