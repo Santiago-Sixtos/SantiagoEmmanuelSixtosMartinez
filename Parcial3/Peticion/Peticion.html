@@ -11,11 +11,10 @@
     </form>
     <script>
         document.getElementById("btn_peticion").addEventListener("click",async ()=>{
-            let response=await fetch("http://localhost:8082", {method});
+            let response=await fetch("http://localhost:8082/alumnos", {method});
             let data =await response.text();
             console.log(data);
         })
     </script>
 </body>
 </html>
-tiene menú contextual
