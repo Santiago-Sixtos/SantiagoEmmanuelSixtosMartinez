@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express('cors');
 const cors = require('cors');
-// app.use=(cors());
+app.use(cors({origin:"*"}));
 
 app.get('/',(req,res)=>{
     res.json({mensaje:"Server express respondiendo a get"});
