@@ -17,7 +17,7 @@ const connection = mysql.createConnection({
   port: 3306,
 });
  
-app.get('/datos', (req, res) => {
+app.get('/tdg', (req, res) => {
  
   connection.query('SELECT * FROM tdg', (error, results, fields) => {
     if (error) {
