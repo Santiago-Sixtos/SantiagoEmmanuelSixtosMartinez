@@ -21,11 +21,20 @@ app.get('/tdg', (req, res) => {
  
   connection.query('SELECT * FROM tdg', (error, results, fields) => {
     if (error) {
-      res.status(500).json({ error: 'Error al obtener datos de la base de datos' });
+      res.status(500).json({ error: 'Error al obtener datos de gatitos' });
+      return;
+    } 
+    res.json(results);
+  });
+});
+
+app.post('/tdg', (req, res) => {
+ 
+  connection.query('SELECT * FROM tdg', (error, results, fields) => {
+    if (error) {
+      res.status(500).json({ error: 'Error al obtener datos de gatitos' });
       return;
     }
- 
- 
     res.json(results);
   });
 });
