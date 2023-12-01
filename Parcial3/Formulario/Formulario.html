@@ -1,20 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario</title>
     <link rel="stylesheet" href="Styles.css">
 </head>
+
 <body>
     <section class="Registro">
         <h4>Formulario</h4>
         <form action="post" action=""></form>
-        <input class="Casillas" type="text" name="Nombre" id="N1" placeholder="Ingrese su nombre aqui">
-        <input class="Casillas" type="email" name="Correo" id="C1" placeholder="Ingrese su correo aqui">
-        <input class="Casillas" type="password" name="Contraseña" id="P1" placeholder="Ingrese su contraseña aqui">
+        <input class="Casillas" type="ID" name="ID" id="N1" placeholder="Ingrese el ID del gatito">
+        <input class="Casillas" type="text" name="Nombre" id="C1" placeholder="Ingrese el nombre del gatito">
+        <p>Ingrese el sexo del gatito</p>
+        <input type="radio" id="M1" name="sexo" value="Macho">
+        <label class="S" for="hombre">Macho</label><br>
+        <input type="radio" id="H1" name="sexo" value="Hembra">
+        <label class="S" for="mujer">Hembra</label><br>
         <p>Estoy de acuerdo con <a href="#">Terminos y condiciones</a></p>
         <input class="Boton" type="submit" value="Enviar">
     </section>
 </body>
+
 </html>
