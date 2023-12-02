@@ -9,11 +9,31 @@
 </head>
 
 <body>
+    <div id="Modal" class="modal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Modal title</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>Modal body text goes here.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
     <section class="Registro">
         <h4>Formulario</h4>
         <form action="post" action="http://localhost:8082/tdg"></form>
         <input class="Casillas" type="ID" name="ID" id="N1" placeholder="Ingrese el ID del gatito">
         <input class="Casillas" type="text" name="Nombre" id="C1" placeholder="Ingrese el nombre del gatito">
+        <input class="Casillas" type="text" name="Raza" id="R1" placeholder="Ingrese la raza del gato">
+        <input class="Casillas" type="text" name="Peso" id="P1" placeholder="Ingrese el peso del gato">
         <p>Ingrese el sexo del gatito</p>
         <input type="radio" id="M1" name="sexo" value="Macho">
         <label class="S" for="hombre">Macho</label><br>
