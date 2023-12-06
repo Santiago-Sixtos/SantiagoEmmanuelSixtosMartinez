@@ -17,6 +17,7 @@ const connection = mysql.createConnection({
   port: 3306,
 });
  
+// obtener informacion
 app.get('/tdg', (req, res) => {
  
   connection.query('SELECT * FROM tdg', (error, results, fields) => {
@@ -28,8 +29,9 @@ app.get('/tdg', (req, res) => {
   });
 });
 
+// Enviar datos
 app.post('/tdg', (req, res) => {
- 
+ const nuevoGatito = req.body;
   connection.query('SELECT * FROM tdg', (error, results, fields) => {
     if (error) {
       res.status(500).json({ error: 'Error al obtener datos de gatitos' });
