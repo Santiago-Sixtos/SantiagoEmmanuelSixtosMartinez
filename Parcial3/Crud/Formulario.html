@@ -44,21 +44,10 @@
     <div id="mensaje" class="error-message"></div>
   </section>
 
-  </form>
-  </div>
-  <div class="container mt-5">
-    <table class="table">
-      <thead>
-        <tr id="table-headers"></tr>
-        <th></th>
-      </thead>
-      <tbody id="table-body"></tbody>
-    </table>
-  </div>
-
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.13/jspdf.plugin.autotable.min.js"></script>
+
   <script>
     //CONSULTA
     document.getElementById("btnConsulta").addEventListener("click", function () {
@@ -270,10 +259,6 @@
       document.getElementById("mensaje").innerHTML = "Gatito modificado exitosamente.";
     });
 
-    //LIMPIAR LOS LABEL
-
-
-
     //LIMPIAR
     document.getElementById("btnLimpiar").addEventListener("click", function () {
 
@@ -286,23 +271,29 @@
       document.getElementById("C1").value = "";
     });
 
-    // Generar PDF
-    document.getElementById("btnGenerarPDF").addEventListener("click", function () {
-      const pdf = new jsPDF();
-      const headers = [];
+    async function obtenerDatos() {
+      const respuesta = await fetch('http://localhost:8082/tdg');
+      const datos = await respuesta.json();
+      return datos;
+    }
+
+    document.getElementById("btnGenerarPDF").addEventListener("click", async function () {
+      const pdf = new jspdf.jsPDF();
+      const headers = ["ID", "Nombre", "Raza", "Peso", "Edad", "Color"]; // Modifica esto con tus encabezados de tabla
       const rows = [];
 
-      // Obtener encabezados de la tabla
-      document.querySelectorAll("#table-headers th").forEach((th) => {
-        headers.push(th.textContent);
-      });
+      // Obtener los datos de la base de datos
+      const datos = await obtenerDatos();
 
-      // Obtener filas de la tabla
-      document.querySelectorAll("#table-body tr").forEach((tr) => {
+      // Llenar las filas con los datos
+      datos.forEach(dato => {
         const row = [];
-        tr.querySelectorAll("td").forEach((td) => {
-          row.push(td.textContent);
-        });
+        row.push(dato.ID); // Modifica esto con las propiedades de tus datos
+        row.push(dato.Nombre);
+        row.push(dato.Raza);
+        row.push(dato.Peso);
+        row.push(dato.Edad);
+        row.push(dato.Color); // Modifica esto con las propiedades de tus datos
         rows.push(row);
       });
 
@@ -315,7 +306,6 @@
       // Descargar el PDF
       pdf.save("documento.pdf");
     });
-
   </script>
 </body>
 
