@@ -2,42 +2,321 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario</title>
-    <link rel="stylesheet" href="Styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario</title>
+  <link rel="stylesheet" href="Styles.css">
 </head>
 
 <body>
-    <div id="Modal" class="modal" tabindex="-1">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">Modal title</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <p>Modal body text goes here.</p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-          </div>
+  <!-- <div id="Modal" class="modal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Modal body text goes here.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
         </div>
       </div>
+    </div>
+  </div> -->
 
-    <section class="Registro">
-        <h4>Formulario</h4>
-        <form action="post" action="http://localhost:8082/tdg"></form>
-        <input class="Casillas" type="ID" name="ID" id="N1" placeholder="Ingrese el ID del gatito">
-        <input class="Casillas" type="text" name="Nombre" id="C1" placeholder="Ingrese el nombre del gatito">
-        <input class="Casillas" type="text" name="Raza" id="R1" placeholder="Ingrese la raza del gato">
-        <input class="Casillas" type="text" name="Peso" id="P1" placeholder="Ingrese el peso del gato">
-        <input class="Casillas" type="text" name="Edad" id="E1" placeholder="Ingrese el edad del gato">
-        <input class="Casillas" type="text" name="Color" id="P1" placeholder="Ingrese el color del gato">
-        <input class="Boton" type="submit" value="Enviar">
-    </section>
+  <section class="Registro">
+    <h4>Captura de gatitos</h4>
+    <input class="Casillas" type="ID" name="ID" id="I1" placeholder="Ingrese el ID del gatito">
+    <input class="Casillas" type="text" name="Nombre" id="N1" placeholder="Ingrese el nombre del gatito">
+    <input class="Casillas" type="text" name="Raza" id="R1" placeholder="Ingrese la raza del gato">
+    <input class="Casillas" type="text" name="Peso" id="P1" placeholder="Ingrese el peso del gato">
+    <input class="Casillas" type="text" name="Edad" id="E1" placeholder="Ingrese el edad del gato">
+    <input class="Casillas" type="text" name="Color" id="C1" placeholder="Ingrese el color del gato">
+    <button class="Boton" id="btnConsulta" type="button">Consultar</button>
+    <button class="Boton" id="btnBorrar" type="button">Borrar</button>
+    <button class="Boton" id="btnAgregar" type="button">Agregar</button>
+    <button class="Boton" id="btnModificar" type="button">Modificar</button>
+    <button class="Boton" id="btnLimpiar" type="button">Limpiar</button>
+    <button class="Boton" id="btnGenerarPDF" type="button">Generar PDF</button>
+    <div id="mensaje" class="error-message"></div>
+  </section>
+
+  </form>
+  </div>
+  <div class="container mt-5">
+    <table class="table">
+      <thead>
+        <tr id="table-headers"></tr>
+        <th></th>
+      </thead>
+      <tbody id="table-body"></tbody>
+    </table>
+  </div>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+    //CONSULTA
+    document.getElementById("btnConsulta").addEventListener("click", function () {
+
+      Swal.fire({
+        title: 'Ingrese el ID ',
+        input: 'text',
+        showCancelButton: true,
+        confirmButtonText: 'Consultar',
+        cancelButtonText: 'Cancelar',
+        showLoaderOnConfirm: true,
+        preConfirm: (id) => {
+          // Aquí puedes realizar la lógica de consulta con el ID ingresado
+          return fetch('http://localhost:8082/tdg/' + id)
+            .then(response => response.json())
+            .then(Objeto => {
+              if (Objeto.estado === 1) {
+                // Mostrar los datos 
+                document.getElementById("I1").value = Objeto.resultado.ID;
+                document.getElementById("N1").value = Objeto.resultado.Nombre;
+                document.getElementById("R1").value = Objeto.resultado.Raza;
+                document.getElementById("P1").value = Objeto.resultado.Peso;
+                document.getElementById("E1").value = Objeto.resultado.Edad;
+                document.getElementById("C1").value = Objeto.resultado.Color;
+                // Mensaje en el DIV
+                document.getElementById("mensaje").innerHTML = 'Consulta realizada de manera exitosa.';
+                Swal.fire(
+                  '¡Buen trabajo!',
+                  'Has realizado la consulta exitosamente.',
+                  'success'
+                );
+              } else {
+                Swal.fire({
+                  icon: 'error',
+                  title: 'Oops...',
+                  text: 'Algo salió mal en la consulta.',
+                  footer: '<a href="">El ID no existe en la Base de Datos</a>'
+                });
+              }
+            })
+            .catch(error => {
+              Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Ocurrió un error al realizar la consulta.',
+              });
+            });
+        }
+      });
+    });
+
+    // BORRAR
+    document.getElementById("btnBorrar").addEventListener("click", function () {
+      let id = document.getElementById("I1").value;
+      // Verificar si los campos están vacíos
+      if (id.trim() === '') {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Ingrese el ID.',
+        });
+        return;
+      }
+
+      Swal.fire({
+        title: '¿Estás seguro?',
+        text: "¡No podrás revertir esto!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Sí, eliminarlo'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          fetch('http://localhost:8082/tdg/' + id, { method: "DELETE" })
+            .then(respuesta => respuesta.json())
+            .then(ObjetoGenero => {
+              if (ObjetoGenero.estado == 1) {
+
+                document.getElementById("N1").value = '';
+                document.getElementById("I1").value = '';
+                document.getElementById("R1").value = '';
+                document.getElementById("P1").value = '';
+                document.getElementById("E1").value = '';
+                document.getElementById("C1").value = '';
+                Swal.fire(
+                  '¡Eliminado!',
+                  'Gatito eliminado exitosamente.',
+                  'success'
+                );
+
+                document.getElementById("mensaje").innerHTML = "Gatito Eliminado.";
+              } else {
+                Swal.fire({
+                  icon: 'error',
+                  title: 'Oops...',
+                  text: 'El ID no existe.',
+                });
+              }
+            });
+        }
+      });
+
+    });
+
+    //ALTA-Agregar
+    document.getElementById("btnAgregar").addEventListener("click", function () {
+
+      let ID = document.getElementById("I1").value;
+      let Nombre = document.getElementById("N1").value;
+      let Raza = document.getElementById("R1").value;
+      let Peso = document.getElementById("P1").value;
+      let Edad = document.getElementById("E1").value;
+      let Color = document.getElementById("C1").value;
+
+
+      // Verificar si los campos están vacíos
+      if (ID.trim() === '' || Nombre.trim() === '' || Raza.trim() === '' || Peso.trim() === '' || Edad.trim() === '' || Color.trim() === '') {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Error: Todos los campos deben estar completos'
+        });
+        return;
+      }
+
+      // Crear un objeto con los datos del nuevo género
+      let nuevo = {
+        ID: ID,
+        Nombre: Nombre,
+        Raza: Raza,
+        Peso: Peso,
+        Edad: Edad,
+        Color: Color
+      };
+
+      // Realizar la solicitud POST al servidor
+      fetch('http://localhost:8082/tdg', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(nuevo)
+      })
+        .then(respuesta => respuesta.json())
+        .then(resultado => {
+          console.log(resultado);
+
+          // Limpiar los campos del formulario
+          document.getElementById("I1").value = "";
+          document.getElementById("N1").value = "";
+          document.getElementById("R1").value = "";
+          document.getElementById("P1").value = "";
+          document.getElementById("E1").value = "";
+          document.getElementById("C1").value = "";
+
+          Swal.fire(
+            '¡Agregado!',
+            'Gatito agregado exitosamente.',
+            'success'
+          );
+          document.getElementById("mensaje").innerHTML = "Gatito agregado exitosamente.";
+        });
+    });
+
+    // MODIFICAR
+    document.getElementById("btnModificar").addEventListener("click", function () {
+      let ID = document.getElementById("I1").value;
+      let Nombre = document.getElementById("N1").value;
+      let Raza = document.getElementById("R1").value;
+      let Peso = document.getElementById("P1").value;
+      let Edad = document.getElementById("E1").value;
+      let Color = document.getElementById("C1").value;
+      // Verificar si los campos están vacíos
+      if (ID.trim() === '' || Nombre.trim() === '' || Raza.trim() === '' || Peso.trim() === '' || Edad.trim() === '' || Color.trim() === '') {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Error: Todos los campos deben estar completos'
+        });
+        return;
+      }
+      // Crear un objeto con los datos del nuevo género musical
+      let nuevo = {
+        ID: ID,
+        Nombre: Nombre,
+        Raza: Raza,
+        Peso: Peso,
+        Edad: Edad,
+        Color: Color
+      };
+      // Realizar la solicitud POST al servidor
+      fetch('http://localhost:8082/tdg/' + document.getElementById("I1").value, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json' //envia un ojbeto al body
+        },
+        body: JSON.stringify(nuevo) //lo convierte a una cadena JSON
+      })
+        .then(respuesta => respuesta.json())
+        .then(resultado => {
+          console.log(resultado);
+          Swal.fire(
+            '¡Modificado!',
+            'Gatito modificado exitosamente.',
+            'success'
+          );
+        });
+      document.getElementById("mensaje").innerHTML = "Gatito modificado exitosamente.";
+    });
+
+    //LIMPIAR LOS LABEL
+
+
+
+    //LIMPIAR
+    document.getElementById("btnLimpiar").addEventListener("click", function () {
+
+      // Limpiar los campos del formulario
+      document.getElementById("I1").value = "";
+      document.getElementById("N1").value = "";
+      document.getElementById("R1").value = "";
+      document.getElementById("P1").value = "";
+      document.getElementById("E1").value = "";
+      document.getElementById("C1").value = "";
+    });
+
+    // Generar PDF
+    document.getElementById("btnGenerarPDF").addEventListener("click", function () {
+      const pdf = new jsPDF();
+      const headers = [];
+      const rows = [];
+
+      // Obtener encabezados de la tabla
+      document.querySelectorAll("#table-headers th").forEach((th) => {
+        headers.push(th.textContent);
+      });
+
+      // Obtener filas de la tabla
+      document.querySelectorAll("#table-body tr").forEach((tr) => {
+        const row = [];
+        tr.querySelectorAll("td").forEach((td) => {
+          row.push(td.textContent);
+        });
+        rows.push(row);
+      });
+
+      // Añadir encabezados y filas al documento PDF
+      pdf.autoTable({
+        head: [headers],
+        body: rows,
+      });
+
+      // Descargar el PDF
+      pdf.save("documento.pdf");
+    });
+
+  </script>
 </body>
 
 </html>
