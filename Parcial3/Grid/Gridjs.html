@@ -12,10 +12,10 @@
  
     <script>
         new gridjs.Grid({
-            columns: ['ID', 'Nombre', 'Sexo'],
+            columns: ['ID', 'Nombre', 'Raza', 'Peso', 'Edad', 'Color'],
             server: {
                 url: 'http://localhost:8082/tdg',
-                then: data => data.map(tdg => [tdg.ID, tdg.Nombre, tdg.Sexo])
+                then: data => data.map(tdg => [tdg.ID, tdg.Nombre, tdg.Raza, tdg.Peso, tdg.Edad, tdg.Color])
             }
         }).render(document.getElementById("wrapper"));
     </script>
